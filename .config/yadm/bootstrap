@@ -1,0 +1,31 @@
+#!/bin/bash
+
+cd "$HOME"
+
+if [[ "$(uname)" = "Darwin" ]]; then
+  if !( xcode-select -p >/dev/null ); then
+    echo "Installing command line tools..."
+    sudo xcode-select --install
+  fi
+
+  if !( which -s brew ); then
+    echo "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+
+  if [ -f "$HOME/.Brewfile" ]; then
+    echo "Installing all of Hombrew's stuff..."
+    brew bundle --global
+    rm "$HOME/.Brewfile.lock.json"
+  fi
+fi
+
+if (( "$(vim --version | head -n 1 | grep -o "\d*\.\d*" | grep -o "\d" | head -n 1)" >= 8 )); then
+  VUNDLETARGET="$HOME/.vim/bundle/Vundle.vim"
+  mkdir -p "$VUNDLETARGET"
+  if [[ -z "$(ls -A "$HOME/.vim/bundle/Vundle.vim")" ]]; then
+    git clone -- https://github.com/VundleVim/Vundle.vim.git "$VUNDLETARGET"
+  fi
+fi
+
+bash "$HOME/.config/yadm/pythonInstall.sh"

@@ -1,0 +1,2 @@
+let g:ShouldLoadYouCompleteMe=1
+source ~/.vim/vimrc

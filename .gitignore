@@ -1,0 +1,6 @@
+.ssh
+secring.*
+id_*
+known_hosts
+.vnc
+.*_history

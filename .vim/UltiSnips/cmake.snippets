@@ -1,0 +1,50 @@
+snippet proj "New project" b
+cmake_minimum_required(VERSION 3.14)
+project($1 ${3:VERSION $2})
+endsnippet
+
+snippet min "Set CMake minimum version" b
+cmake_minimum_required(VERSION $(1:3.14})
+endsnippet
+
+snippet cpp "Require C++" b
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+endsnippet
+
+snippet glob "Run the GLOB" b
+file(GLOB ${1:VARIABLE} ${3:./*.$2})
+endsnippet
+
+snippet set "Set variable" b
+set(${1:VARIABLE} ${2:ON})
+endsnippet
+
+snippet opt "Set deafault option" b
+option(${1:VARIABLE} "$2" ${3:ON})
+endsnippet
+
+snippet subdir "Add subdirectory" b
+add_subdirectory($1)
+endsnippet
+
+snippet config "Add configuration file" b
+configure_file("${1/.*/$0.in/}" "${1:infile}")
+endsnippet
+
+snippet exec "Add executable target" b
+add_executable(${1:a.out} ${2:main.c})
+endsnippet
+
+snippet lib "Add library target" b
+add_library(${1:lib} ${2:files})
+endsnippet
+
+snippet /ld|link(er)?/ "Link to target" b
+target_link_libraries(${1:target} ${3:PRIVATE} ${2:library})
+endsnippet
+
+snippet "inc(lude)" "Add header directory" b
+target_include_directories(${1:target} ${3:PRIVATE} ${2:directory})
+endsnippet
+

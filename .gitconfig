@@ -1,0 +1,24 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Benjamin Morrell
+	email = BDMorrell@gmail.com
+	signingkey = 578D3FFF0E4F4C3C
+[core]
+	editor = vim
+	excludesFile = ~/.gitignore_global
+[alias]
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[pull]
+	ff = only
+[filter "nbstripout"]
+	clean = \"~/bin/py\" -m nbstripout
+	smudge = cat
+[diff "ipynb"]
+	textconv = \"~/bin/py\" -m nbstripout -t
