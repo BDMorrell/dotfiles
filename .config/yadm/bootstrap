@@ -2,6 +2,10 @@
 
 cd "$HOME"
 
+[[ -e "$HOME/README.md" ]] && rm "$HOME/README.md"
+
+yadm remote set-url origin "git@github.com:BDMorrell/dotfiles.git"
+
 if [[ "$(uname)" = "Darwin" ]]; then
   if !( xcode-select -p >/dev/null ); then
     echo "Installing command line tools..."
