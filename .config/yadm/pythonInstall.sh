@@ -22,7 +22,7 @@ fi
 
 # basics
 PS="scipy numpy"
-PS="$PS colorama progress pygments"
+PS="$PS colorama progress pygments" # for terminals
 PS="$PS matplotlib pandas"
 PS="$PS pandocfilters"
 # executables
@@ -33,6 +33,8 @@ PS="$PS jupyterlab nbstripout"
 PS="$PS jupyterlab-git jupyterlab-latex"
 PS="$PS voila voila-gridstack"
 PS="$PS ipywidgets bqplot pythreejs beakerx cookiecutter"
+# scraping
+PS="$PS beautifulsoup4 requests"
 
 #############
 #  Install  #
@@ -40,7 +42,7 @@ PS="$PS ipywidgets bqplot pythreejs beakerx cookiecutter"
 
 "$PYTHON" -m pip install --upgrade pip setuptools
 
-"$PYTHON" -m pip install $PS
+"$PYTHON" -m pip install --upgrade $PS
 
 # build jupyter
 #py -m jupyter lab clean # This part may be a bit much
