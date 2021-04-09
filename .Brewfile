@@ -62,6 +62,9 @@ brew 'libffi'   # "Foreign Function Interface"
 brew 'ncurses'  # for CLI interactivity
 brew 'openssl'  # for security
 brew 'pango'    # laying out text
+### video card
+brew 'glm'  # Linear algebra
+brew 'glfw' # Windowing
 
 
 ###########
@@ -91,7 +94,7 @@ cask 'tex-live-utility'
 cask 'duet'                   # Because I have an old computer
 cask 'google-backup-and-sync' # For my stuff
 cask 'microsoft-office'       # To render Word documents to PDF
-cask 'zoomus'                 # Pandemic
+cask 'zoom'                   # Pandemic
 cask 'zotero'                 # Citations
 ## Why do I keep dragging these around?
 cask 'discord'       # I don't have anyone to talk to

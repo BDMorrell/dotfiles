@@ -1,3 +1,4 @@
 source ~/.vim/ftplugin/text.vim
 
-set colorcolumn=120
+set colorcolumn=81
+set textwidth=80

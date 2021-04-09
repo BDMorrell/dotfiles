@@ -1,0 +1,58 @@
+##############
+#  REQUIRED  #
+##############
+pip
+setuptools
+
+############
+#  BASICS  #
+############
+scipy
+numpy
+
+# Terminal
+colorama
+progress
+pygments
+
+# Data
+matplotlib
+pandas
+
+#################
+#  EXECUTABLES  #
+#################
+bpython
+ipython
+
+manimgl
+manim
+
+#Jupyter
+jupyterlab
+nbstripout
+
+jupyterlab-git
+jupyterlab-latex
+voila
+voila-gridstack
+
+ipywidgets
+bqplot
+pythreejs
+beakerx
+cookiecutter
+
+###################
+#  RARE SCRAPING  #
+###################
+beautifulsoup4
+requests
+
+##########
+#  MISC  #
+##########
+graphviz
+rdflib
+pandocfilters
+

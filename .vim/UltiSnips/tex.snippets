@@ -27,7 +27,7 @@ endglobal
 
 # Often used
 
-snippet beg "begin{} / end{}" bA
+snippet beg "begin{} / end{}" b
 \begin{$1}
   $0
 \end{$1}
@@ -66,70 +66,4 @@ context "math()"
 snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
-
-# Templates
-
-snippet \doc "Main LaTeX document template" bm
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-\\documentclass\{article\}
-\\usepackage\{geometry\}
-\\geometry\{letterpaper\}
-\\usepackage\{amsmath\}
-\\usepackage\{amssymb\}
-\\usepackage\{graphicx\}
-\\usepackage\{xcolor\}
-\\usepackage\{float\}
-\\usepackage[hyperfootnotes=false]\{hyperref\}
-\\usepackage\{booktabs\}
-\\hypersetup\{
-  colorlinks,
-  linkcolor=\{red!90!black\}
-\}
-
-% \\newcommand\{\\R\}\{\\mathbb\{R\}\}
-% \\newcommand\{\\Z\}\{\\mathbb\{Z\}\}
-% \\graphicspath\{ \{./img/\} \}
-
-\\title\{$1\}
-\\author\{Benjamin Morrell\}
-\\date\{`date "+%d %b %Y"`\}
-
-\\begin\{document\}
-\\maketitle
-
-$2
-
-\\end\{document\}
-endsnippet
-
-# Preamble
-snippet \preamble-code "Preamble items useful for typesetting code" bm
-\usepackage{enumitem}
-\usepackage{textcomp}
-\usepackage{listings}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.17}
-\lstset{
-  language = Java,
-  upquote = true,
-  showstringspaces = false,
-  % numbers = left,
-  commentstyle = \color{black!75!white}\rmfamily\itshape\mbox, %% set comment color
-  keywordstyle = \bfseries, %% set keyword color
-  stringstyle = \sffamily\color{black!80!white}, %% set string color
-  rulecolor = \color{black}, %% set frame color to avoid being affected by text color
-  basicstyle = \small\ttfamily , %% set listing font and size
-  breaklines = true, %% enable line breaking
-  numberstyle = \tiny,
-  frame=l,
-  tabsize=2,
-  breakatwhitespace,
-}
-endsnippet
-
-
-
-
-
 

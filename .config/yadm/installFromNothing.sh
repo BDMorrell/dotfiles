@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 TMP="$(mktemp)"
-curl -fsSL "$TMP" https://github.com/TheLocehiliosan/yadm/raw/master/yadm > $TMP
+curl -fsSL "$TMP" https://github.com/TheLocehiliosan/yadm/raw/master/yadm > "$TMP"
 chmod +x "$TMP"
 ln -s "$TMP" "$HOME/installFromNothing.sh"
 

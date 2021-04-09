@@ -2,8 +2,7 @@
 export PATH="$HOME/bin:/usr/local/sbin:$PATH"
 
 # pkg-config needs to find icu4c
-export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig"
-
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/opt/qt/lib/pkgconfig"
 
 ################################################################################
 # Stop if running interactively
@@ -24,8 +23,6 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 # User configuration
 export CLICOLOR=1
 export LSCOLORS="GxFxBxDxCxEgEdxbxgxcxd"
-
-[[ -f ~/.zshrc.sec ]] && source ~/.zshrc.sec
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
