@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# PDF shrinker for macOS using ghost script (gc).
+# Probably won't work on anything but macOS, but my target is to fix
+# PDF files that grew with Preview.app or iOS PDF viewer annotations
+
+if [ "$#" = "2" ]; then
+  in="$1"
+  out="$2"
+elif [ "$#" = "1" ]; then
+  in="$1"
+  out="$1"
+else
+  echo "usage: $0 input output"
+  exit
+fi
+
+if [ ! -r "$in" ]; then
+  echo "Input $in does not exist"
+fi
+
+tmpdir="$(mktemp -d)"
+outfile="${tmpdir}/out.pdf"
+
+gs -dPDFA=2 -dSAFER -dBATCH -dNOPAUSE -dNOOUTERSAVE -sProcessColorModel=DeviceRGB -sDEVICE=pdfwrite -sPDFACompatibilityPolicy=1 "-sOutputFile=$outfile" "$in"
+
+isize="$(stat -f %z "$in")"
+osize="$(stat -f %z "$outfile")"
+
+echo "Size delta = $(($isize-$osize))"
+
+if [ "$osize" -gt "$isize" ]; then
+  echo "Warning: The file grew"
+fi
+
+if [ "$osize" -le "$isize" -o "$out" != "$in" ]; then
+  if [ "$out" = "$in" ]; then
+    echo "old $out moved to trash"
+    mv "$out" "$HOME/.Trash"
+  fi
+  mv "$outfile" "$out"
+else
+  echo "No file was outputted"
+fi
+
+rm -rf "$tmpdir"
