@@ -76,6 +76,12 @@ for file in "$here/setups/"*; do
   echo
   if confirm "Run the setup \"$(basename "$file")\"?"; then
     cmdprint "$SHELL" "$file"
-    dimprint "\"$(basename "$file")\" finished with return status $?"
+    failed=$?
+    scriptName="$(basename "$file")"
+    dimprint "\"$scriptName\" finished with return status $failed"
+    printok $failed "$scriptName"
   fi
 done
+
+echo
+printok 0 "Bootstrap script finished!"
