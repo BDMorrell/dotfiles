@@ -23,7 +23,8 @@ checkCLT() { # check command line tools
 
 checkHomebrew() {
   if checkCLT; then
-    return checkcmd
+    checkcmd brew
+    return $?
   else
     return 1;
   fi

@@ -31,6 +31,7 @@ manim
 #Jupyter
 jupyterlab
 nbstripout
+ipympl
 
 jupyterlab-git
 jupyterlab-latex
@@ -44,6 +45,12 @@ beakerx
 cookiecutter
 
 ###################
+#  Documentation  #
+###################
+sphinx
+sphinx-rtd-theme
+
+###################
 #  RARE SCRAPING  #
 ###################
 beautifulsoup4
@@ -55,4 +62,5 @@ requests
 graphviz
 rdflib
 pandocfilters
+unidecode
 

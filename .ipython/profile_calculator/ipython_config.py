@@ -12,6 +12,7 @@ c.InteractiveShellApp.exec_lines = [
         'from math import *',
         'import time',
         'print("\\nReady (system {}s)".format(time.thread_time()))',
+        "def pll(*a):\n\tsum=0\n\tfor v in a:\n\t\tsum += 1/v\n\treturn 1/sum"
         ]
 
 

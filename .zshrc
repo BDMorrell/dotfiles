@@ -1,8 +1,20 @@
-# If you come from bash you might have to change your $PATH.
-export PATH="$HOME/bin:/usr/local/sbin:$PATH"
+path=(
+  "${HOME}/bin" # HOME/bin should be first
+  "/usr/local/opt/ruby/bin"
+  $path
+#  "/usr/local/sbin"
+  "${HOME}/.cargo/bin"
+  "${HOME}/Library/Frameworks/Python.framework/Versions/Current/bin"
+)
+export PATH
 
-# pkg-config needs to find icu4c
-export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/opt/qt/lib/pkgconfig"
+typeset -TU PKG_CONFIG_PATH pkg_config_path :
+pkg_config_path=(
+  "/usr/local/opt/openssl@1.1/lib/pkgconfig"
+  "/usr/local/opt/icu4c/lib/pkgconfig"
+  "/usr/local/opt/qt/lib/pkgconfig"
+)
+export PKG_CONFIG_PATH
 
 ################################################################################
 # Stop if running interactively

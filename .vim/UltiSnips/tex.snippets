@@ -14,15 +14,15 @@ texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')
 ignore = texIgnoreMathZoneIds[0]
 
 def math():
-	synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
-	try:
-		first = next(
+    synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
+    try:
+        first = next(
             i for i in reversed(synstackids)
             if i in texIgnoreMathZoneIds or i in texMathZoneIds
         )
-		return first != ignore
-	except StopIteration:
-		return False
+        return first != ignore
+    except StopIteration:
+        return False
 endglobal
 
 # Often used
@@ -40,6 +40,10 @@ snippet float "Insert a float" b
   \\caption\{$2\}
   \\label\{${1/(...).*/$1/}:${4/\s+(\w+)/\u$1/g}\}
 \\end\{$1\}
+endsnippet
+
+snippet // "Fraction" i
+\\frac{$1}{$2}$0
 endsnippet
 
 

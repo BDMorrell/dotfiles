@@ -9,4 +9,4 @@ if [[ ( "0" != "$?" ) || -z "$TLMGR" ]]; then
   exit -1
 fi
 
-cmdprint sudo "$TLMGR" update --self && cmdprint sudo "$TLMGR" update --all
+cmdprint sudo "$TLMGR" update -self -all

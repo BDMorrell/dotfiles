@@ -9,7 +9,7 @@ checkcmd() {
 }
 
 confirm() {
-  read -q "okay?${*:-"Continue?"} [y/n] "
+  read -qr "okay?${*:-"Continue?"} [y/n] "
   echo
   [[ $okay == 'y' ]];
   return $?
