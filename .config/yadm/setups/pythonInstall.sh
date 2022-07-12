@@ -22,7 +22,7 @@ fi
 #  Install  #
 #############
 
-cmdprint "$PYTHON" -m pip install --upgrade pip setuptools
+cmdprint "$PYTHON" -m pip install --upgrade pip setuptools wheel
 
 cmdprint "$PYTHON" -m pip install --upgrade -r "$here/../requirements.txt"
 
