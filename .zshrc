@@ -56,6 +56,7 @@ alias la="ls -A"
 alias here="cd -P ."
 alias vim-ycm="vim -u ~/.vim/ycm-vimrc"
 alias gvim-ycm="gvim -u ~/.vim/ycm-vimrc"
+alias vscode="open -a 'Visual Studio Code'"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
