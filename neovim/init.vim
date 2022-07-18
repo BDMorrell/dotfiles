@@ -89,7 +89,7 @@ nnoremap <silent> <C-P> <cmd>Telescope find_files<cr>
 """""""
 " LUA "
 """""""
-luafile $XDG_CONFIG_HOME/nvim/startup.lua
+exec 'source' ( stdpath('config') . '/startup.lua' )
 
 """""""
 " LSP "
