@@ -1,0 +1,12 @@
+Brewfile.*.lock.json
+secrets.*
+credentials.*
+.pkrvars.hcl
+*.pkrvars.hcl
+.nvimlog
+.ssh
+secring.*
+id_*
+known_hosts
+.vnc
+.*_history
