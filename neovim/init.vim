@@ -130,3 +130,7 @@ else
 
     augroup END
 endif
+
+if exists("g:neovide")
+    set guifont="MesloLGS NF"
+endif
