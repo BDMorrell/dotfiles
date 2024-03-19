@@ -1,0 +1,3 @@
+# XDG_CONFIG_HOME is used for (amoung other things) helping `git` find where its configs are
+[[ -v 'XDG_CONFIG_HOME' ]] || export XDG_CONFIG_HOME="${HOME}/.config"
+. "$HOME/.cargo/env"

@@ -1,0 +1,12 @@
+# Stop if running noninteractively
+case $- in
+    *i*) ;;
+    *) return;;
+esac
+
+# I like to have colors
+export CLICOLOR=1
+export LSCOLORS="GxFxBxDxCxEgEdxbxgxcxd"
+
+alias la='ls -A'
+alias here='cd -P .'

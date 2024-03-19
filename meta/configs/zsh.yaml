@@ -1,0 +1,7 @@
+- link:
+    $HOME/.zshrc:
+        path: zsh/zshrc
+        relink: true
+    $HOME/.zshenv:
+        path: zsh/zshenv
+        relink: true
