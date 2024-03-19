@@ -11,4 +11,4 @@
 - clean:
     $HOME:
     $HOME/.config:
-        recursive: true
+#         recursive: true

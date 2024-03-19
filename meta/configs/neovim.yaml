@@ -1,9 +1,9 @@
 - link:
-   $HOME/.config/nvim: neovim
+    $HOME/.config/nvim: neovim
 - shell:
-  -
-    description: "[neovim] installing plugins"
-    command: |
-      bash neovim/plugup.sh || \
-      echo '[neovim] could not install plugings completely'
-    quiet: true
+    -
+        description: "[neovim] installing plugins"
+        command: |
+            bash neovim/plugup.sh || \
+            echo '[neovim] could not install plugings completely'
+        quiet: true
