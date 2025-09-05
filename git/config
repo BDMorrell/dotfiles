@@ -13,3 +13,5 @@
 [pull]
 	ff = only
     
+[alias]
+	graph = log --graph --all --decorate --oneline

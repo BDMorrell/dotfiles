@@ -10,3 +10,13 @@ export LSCOLORS="GxFxBxDxCxEgEdxbxgxcxd"
 
 alias la='ls -A'
 alias here='cd -P .'
+# Set up completions
+# ~/.zsh_completions
+ZSH_HOME_COMPLETION_DIR="${HOME}/.zsh_completions"
+if [[ ( -d "${ZSH_HOME_COMPLETION_DIR}" ) && ( -x "${ZSH_HOME_COMPLETION_DIR}" ) ]]; then
+    FPATH+=":${ZSH_HOME_COMPLETION_DIR}"
+fi
+unset ZSH_HOME_COMPLETION_DIR
+
+autoload -Uz compinit
+compinit

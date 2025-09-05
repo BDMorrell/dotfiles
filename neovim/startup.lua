@@ -22,7 +22,7 @@ local opts = {
     },
 }
 
-require('rust-tools').setup(opts)
+--require('rust-tools').setup(opts)
 
 local cmp = require('cmp')
 cmp.setup({

@@ -50,8 +50,8 @@ else
         "Plug 'hrsh7th/cmp-cmdline'
 
     " Rust
-    Plug 'simrat39/rust-tools.nvim'
-    Plug 'rust-lang/rust.vim'
+    "Plug 'simrat39/rust-tools.nvim'
+    "Plug 'rust-lang/rust.vim'
 
     call plug#end()
 endif
